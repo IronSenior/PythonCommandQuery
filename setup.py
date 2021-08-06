@@ -1,8 +1,8 @@
 from distutils.core import setup
 
 setup(
-  name = 'simple_cqrs',
-  packages = ['simple_cqrs'],
+  name = 'plato_cqrs',
+  packages = ['plato_cqrs'],
   version = '0.1',
   license='GPL-3',
   description = 'Simple CQRS implementation',
