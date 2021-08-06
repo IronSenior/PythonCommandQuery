@@ -1,8 +1,8 @@
 from distutils.core import setup
 
 setup(
-  name = 'SimpleCQRS',
-  packages = ['SimpleCQRS'],
+  name = 'simple_cqrs',
+  packages = ['simple_cqrs'],
   version = '0.1',
   license='GPL-3',
   description = 'Simple CQRS implementation',
