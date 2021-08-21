@@ -45,3 +45,9 @@ class TestQueryBus(unittest.TestCase):
         query_bus: QueryBus = QueryBus()
         with self.assertRaises(QueryHandlerDoesNotExistException):
             query_bus.publish(self.mockedQuery)
+
+    def test_clean_query_bus(self):
+        query_bus: QueryBus = QueryBus()
+        query_bus.subscribe(self.mockedQuery.__class__, self.mockedQueryHandler)
+        query_bus.clean()
+        self.assertEqual(query_bus._querys, {})

@@ -31,3 +31,10 @@ class TestCommandBus(unittest.TestCase):
         command_bus: CommandBus = CommandBus()
         with self.assertRaises(CommandHandlerDoesNotExistException):
             command_bus.publish(self.mockedCommnand)
+            
+    def test_clean_command_bus(self):
+        command_bus: CommandBus = CommandBus()
+        command_bus.subscribe(self.mockedCommnand.__class__, self.mockedCommnandHandler)
+        command_bus.clean()
+        self.assertEqual(command_bus._commands, {})
+        

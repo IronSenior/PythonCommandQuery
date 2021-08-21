@@ -24,4 +24,6 @@ class QueryBus:
         response: QueryResponse = self._querys[query.__class__].handle(query)
         self._semaphore.release()
         return response
-        
+
+    def clean(self):
+        self._querys = {}

@@ -21,3 +21,6 @@ class CommandBus:
         self._semaphore.acquire()
         self._commands[cmd.__class__].handle(cmd)
         self._semaphore.release()
+        
+    def clean(self):
+        self._commands = {}
